@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Jardinería</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/Estudiante.js" type="text/javascript"></script>
+    <script src="js/funciones.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de Jardinería</h1>
+
+        <div id="mensajes"></div>
+
+        <div class="row">
+            <div class="col">
+                <label for="txtcodigo" class="form-label">Código de Planta</label>
+                <div class="row">
+                    <div class="col-4">
+                        <input type="text" class="form-control" id="txtcodigo" maxlength="5" required />
+                    </div>
+                    <div class="col-1">
+                        <button class="btn btn-primary" onclick="consultar();" >Consultar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br/>
+
+        <div class="row">
+            <div class="col-4">
+                <label for="txtnombre" class="form-label">Nombre de la Planta</label>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" id="txtnombre" maxlength="30" required />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <label for="txttipo" class="form-label">Tipo de Planta</label>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" id="txttipo" maxlength="30" required />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br/>
+
+        <div class="row">
+            <div class="col-4">
+                <label for="txtaltura" class="form-label">Altura (cm)</label>
+                <div class="row">
+                    <div class="col">
+                        <input type="number" class="form-control" id="txtaltura" min="0" required />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <label for="txtcolor" class="form-label">Color</label>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" id="txtcolor" maxlength="30" required />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <label for="cbotiporiego" class="form-label">Tipo de Riego</label>
+                <div class="row">
+                    <div class="col">
+                        <select class="form-select" id="cbotiporiego" required>
+                            <option value="">Seleccionar tipo de riego</option>
+                            <option value="Manual">Manual</option>
+                            <option value="Automático">Automático</option>
+                            <option value="Por goteo">Por goteo</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br/>
+
+        <div class="row">
+            <div class="col-4">
+                <label class="form-label">Floración</label>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="opfloracion" id="opflorsi" value="Sí" checked>
+                            <label class="form-check-label" for="opflorsi">Sí</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="opfloracion" id="opflorno" value="No">
+                            <label class="form-check-label" for="opflorno">No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <label for="txtprecio" class="form-label">Precio</label>
+                <div class="row">
+                    <div class="col">
+                        <input type="number" class="form-control" id="txtprecio" min="0" required />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <label class="form-label">Tipo de Mantenimiento</label>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="opmantenimiento" id="opmantenimientosi" value="Mantenimiento programado" checked>
+                            <label class="form-check-label" for="opmantenimientosi">Mantenimiento programado</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="opmantenimiento" id="opmantenimientono" value="Mantenimiento correctivo">
+                            <label class="form-check-label" for="opmantenimientono">Mantenimiento correctivo</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br/>
+
+        <div class="row">
+            <div class="col-4">
+                <label for="txtstock" class="form-label">Stock</label>
+                <div class="row">
+                    <div class="col">
+                        <input type="number" class="form-control" id="txtstock" min="0" required />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <label for="txtproveedor" class="form-label">Proveedor</label>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" id="txtproveedor" maxlength="30" required />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <label for="cbocargo10" class="form-label">Cargo 10</label>
+                <div class="row">
+                    <div class="col">
+                        <select class="form-select" id="cbocargo10" required>
+                            <option value="">Seleccionar cargo</option>
+                            <option value="Encargado de plantación">Encargado de plantación</option>
+                            <option value="Encargado de diseño de jardines">Encargado de diseño de jardines</option>
+                            <option value="Encargado de mantenimiento">Encargado de mantenimiento</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br/>
+
+        <div class="row">
+            <div class="col-4">
+                <button class="btn btn-primary btn-lg" style="width:100%;" onclick="registrar();" >Registrar</button>
+            </div>
+            <div class="col-4">
+                <button class="btn btn-primary btn-lg" style="width:100%;" onclick="modificar()" >Modificar</button>
+            </div>
+            <div class="col-4">
+                <button class="btn btn-primary btn-lg" style="width:100%;" onclick="eliminar()" >Eliminar</button>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="text-center mt-4">DESARROLLADO POR: EDUARDO PINO</div>
+</body>
+</html>
